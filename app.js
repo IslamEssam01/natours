@@ -21,6 +21,8 @@ const hpp = require('hpp');
 
 const cookieParser = require('cookie-parser');
 
+const compression = require('compression');
+
 const app = express();
 
 app.set('view engine', 'pug');
@@ -87,6 +89,8 @@ app.use(cookieParser());
 
 app.use(mongoSanitize());
 app.use(xss());
+
+app.use(compression());
 // app.use(
 //   hpp({
 //     whitelist: [

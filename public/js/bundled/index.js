@@ -17080,7 +17080,7 @@ async function login(email, password) {
   try {
     const res = await axios_default({
       method: "POST",
-      url: "http://127.0.0.1:3000/api/v1/users/login",
+      url: "/api/v1/users/login",
       data: {
         email,
         password
@@ -17092,7 +17092,6 @@ async function login(email, password) {
         location.assign("/");
       }, 1500);
     }
-    console.log(res);
   } catch (err) {
     showAlert("error", err.response.data.message);
   }
@@ -17101,7 +17100,7 @@ async function logout() {
   try {
     const res = await axios_default({
       method: "GET",
-      url: "http://127.0.0.1:3000/api/v1/users/logout"
+      url: "/api/v1/users/logout"
     });
     if (res.data.status === "success")
       location.reload(true);
@@ -17113,7 +17112,7 @@ async function logout() {
 // public/js/updateSettings.js
 async function updateSettings(data3, type) {
   try {
-    const url = type === "password" ? "http://127.0.0.1:3000/api/v1/users/updateMyPassword" : "http://127.0.0.1:3000/api/v1/users/me";
+    const url = type === "password" ? "/api/v1/users/updateMyPassword" : "/api/v1/users/me";
     const res = await axios_default({
       method: "PATCH",
       url,
