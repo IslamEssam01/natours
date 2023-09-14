@@ -25,9 +25,9 @@ const compression = require('compression');
 
 const cors = require('cors');
 
-app.options('*', cors());
-
 const app = express();
+
+app.options('*', cors());
 
 app.set('view engine', 'pug');
 
