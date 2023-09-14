@@ -7,7 +7,8 @@
     "main": false
   },
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+    "dev": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "debug": "ndb server.js",
     "watch:js": "bun build --watch ./public/js/index.js --outdir ./public/js/bundled",
@@ -45,7 +46,6 @@
   },
   "devDependencies": {
     "buffer": "^6.0.3",
-    "nodemon": "^3.0.1",
-    "parcel": "^2.9.3"
+    "nodemon": "^3.0.1"
   }
 }
